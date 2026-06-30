@@ -1,0 +1,52 @@
+{
+  "name": "wayfare",
+  "version": "0.1.0",
+  "description": "Turn travel booking confirmations into a beautiful, single-file HTML itinerary. Connector-driven, themeable, zero runtime dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "travel",
+    "itinerary",
+    "trip-planner",
+    "html",
+    "gmail",
+    "calendar",
+    "ics",
+    "claude",
+    "agent-skill"
+  ],
+  "bin": {
+    "wayfare": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "schema",
+    "themes",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "test": "node --test --import tsx test/",
+    "example": "tsx src/cli.ts build examples/sample-trip.json -o examples/sample-trip.html",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
