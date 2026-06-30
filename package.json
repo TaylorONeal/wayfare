@@ -36,7 +36,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx src/cli.ts",
-    "test": "node --test --import tsx test/",
+    "test": "node --test --import tsx test/*.test.ts",
     "example": "tsx src/cli.ts build examples/sample-trip.json -o examples/sample-trip.html",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "prepublishOnly": "npm run build"
