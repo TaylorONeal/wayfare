@@ -24,7 +24,7 @@ belongs in a separate adapter package, not in `src/`.
    can read — leave the rest undefined so dedupe can merge).
 2. Add a fixture-based test in `test/parsers.test.ts` using a realistic (but
    **fictional**) email. Never commit real emails or personal data.
-3. Note the search pattern in `skill/references/booking-providers.md`.
+3. Note the search pattern in `skill/wayfare/references/booking-providers.md`.
 
 ## Add a theme
 
