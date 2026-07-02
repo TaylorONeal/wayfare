@@ -63,7 +63,7 @@ const { bookings, stats } = await autofillBookings({ email, calendar });
 const html = renderTrip({ title: "My Trip", sections, bookings });
 ```
 
-- **With Claude:** install the Agent Skill in [`skill/`](skill/SKILL.md). It uses
+- **With Claude:** install the Agent Skill in [`skill/wayfare/`](skill/wayfare/SKILL.md). It uses
   your connected Gmail/Calendar to fill the schema and renders for you — the
   "do as little as possible" path.
 - **Offline / no Claude:** export your calendar and run
@@ -73,7 +73,7 @@ const html = renderTrip({ title: "My Trip", sections, bookings });
 How parsing works: travel bookings flow through a small set of platforms, each
 with a stable sender domain. Wayfare matches by domain, extracts the booking,
 and dedupes the confirmation/reminder copies. See
-[`skill/references/booking-providers.md`](skill/references/booking-providers.md).
+[`skill/wayfare/references/booking-providers.md`](skill/wayfare/references/booking-providers.md).
 
 ## Themes
 

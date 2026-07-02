@@ -27,7 +27,7 @@ from Gmail/Calendar/`.ics`. Read `docs/PLAN.md` first.
 | Change the data model | `src/types.ts` (+ `schema/trip.schema.json`) |
 | Add/adjust a component | `src/render.ts` (`renderBlock`) |
 | Add a theme | `src/themes.ts` |
-| Add an email provider | `src/parsers.ts` (+ `skill/references/booking-providers.md`) |
+| Add an email provider | `src/parsers.ts` (+ `skill/wayfare/references/booking-providers.md`) |
 | Add a data source | `src/connectors.ts` |
 | Change orchestration | `src/autofill.ts` |
 | CLI commands | `src/cli.ts` |

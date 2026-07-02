@@ -42,7 +42,7 @@ encoded in the code:
    (Airbnb, Booking.com, Viator, OpenTable, Stripe…), each with a stable sender
    domain and subject pattern. Match by domain first. This is the same insight
    that made email-based attendance logging reliable, ported to travel.
-   (`parsers.ts`, `skill/references/booking-providers.md`)
+   (`parsers.ts`, `skill/wayfare/references/booking-providers.md`)
 
 3. **A confirmation email is not the event date.** The received date ≠ the stay
    or activity date. Using the header date silently breaks dedupe and misleads
@@ -85,7 +85,7 @@ wayfare/
     cli.ts           build / init / import-ics / themes
     index.ts         public API
   schema/trip.schema.json   JSON Schema (editor autocomplete + validation)
-  skill/                    Claude Agent Skill (SKILL.md + references/)
+  skill/wayfare/            Claude Agent Skill (SKILL.md + references/)
   examples/                 sample-trip.json + generated sample-trip.html
   test/                     node:test suites (render, parsers, connectors)
   docs/                     this plan + schema/theming/connectors guides

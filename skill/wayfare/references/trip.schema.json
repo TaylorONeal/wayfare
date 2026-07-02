@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/your-org/wayfare/schema/trip.schema.json",
+  "title": "Wayfare Trip",
+  "description": "A travel itinerary as plain data. Renders to a single self-contained HTML page.",
+  "type": "object",
+  "required": ["title", "sections"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "title": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "kicker": { "type": "string" },
+    "start": { "$ref": "#/$defs/isoDate" },
+    "end": { "$ref": "#/$defs/isoDate" },
+    "currency": { "type": "string", "description": "ISO 4217, e.g. USD" },
+    "theme": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "object" }
+      ]
+    },
+    "bookings": { "type": "array", "items": { "$ref": "#/$defs/booking" } },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/section" }
+    }
+  },
+  "$defs": {
+    "isoDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "money": {
+      "type": "object",
+      "required": ["amount", "currency"],
+      "properties": {
+        "amount": { "type": "number" },
+        "currency": { "type": "string" }
+      }
+    },
+    "link": {
+      "type": "object",
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "booking": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": {
+          "enum": ["flight", "lodging", "activity", "dining", "transport", "wellness", "event", "other"]
+        },
+        "status": {
+          "enum": ["idea", "toBook", "reserved", "confirmed", "done", "cancelled"]
+        },
+        "date": { "$ref": "#/$defs/isoDate" },
+        "time": { "type": "string" },
+        "endDate": { "$ref": "#/$defs/isoDate" },
+        "location": { "type": "string" },
+        "bookBy": { "$ref": "#/$defs/isoDate" },
+        "confirmation": { "type": "string" },
+        "cost": { "$ref": "#/$defs/money" },
+        "balanceDue": { "$ref": "#/$defs/money" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" },
+        "links": { "type": "array", "items": { "$ref": "#/$defs/link" } },
+        "source": { "type": "string" }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["id", "label", "blocks"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "label": { "type": "string" },
+        "blocks": { "type": "array", "items": { "$ref": "#/$defs/block" } }
+      }
+    },
+    "block": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "enum": ["lead", "heading", "callout", "cards", "checklist", "bookingTable", "dayGrid", "baseSwitcher"]
+        }
+      }
+    }
+  }
+}
