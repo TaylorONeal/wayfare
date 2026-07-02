@@ -10,7 +10,7 @@ interface CalendarSource { listEvents(range?): Promise<CalendarEvent[]>; }
 
 ## Three ways to feed Wayfare
 
-1. **Claude Agent Skill** (`skill/SKILL.md`) — Claude uses your connected
+1. **Claude Agent Skill** (`skill/wayfare/SKILL.md`) — Claude uses your connected
    Gmail/Calendar, runs the provider searches, and fills the trip. Lowest effort.
 
 2. **`.ics` export (offline, built in)** — export your calendar and run:
