@@ -1,6 +1,13 @@
 ---
 name: wayfare
-description: Build a beautiful single-file HTML travel itinerary from the user's own bookings. Use when someone wants to plan, organize, or visualize a trip; turn scattered confirmations into one page; or "make an itinerary." Pulls flights, lodging, activities, and dining from connected Gmail and Calendar (or an .ics export) so the user types as little as possible, then renders with the Wayfare renderer.
+description: >-
+  Build a beautiful single-file HTML travel itinerary from the user's own
+  bookings. Use when someone wants to plan, organize, or visualize a trip; turn
+  scattered confirmations into one page; or "make an itinerary." Reads flights,
+  lodging, activities, and dining from connected Gmail and Calendar (or an .ics
+  export) so the user types as little as possible, then renders with the Wayfare
+  renderer.
+license: MIT
 ---
 
 # Wayfare — itinerary builder
@@ -26,7 +33,7 @@ Trigger on: "plan my trip," "make an itinerary," "organize my bookings," "what's
    - **A payment receipt (Stripe/PayPal) usually means a deposit/hold, not a full booking** — mark `reserved` and verify.
    - You can run the bundled parser registry (`parseMessages` + `dedupe` from the `wayfare` package) over the message texts instead of hand-rolling regexes.
 
-4. **Assemble a `Trip`** matching `schema/trip.schema.json`. Map each booking to a `status`:
+4. **Assemble a `Trip`** matching `references/trip.schema.json`. Map each booking to a `status`:
    `idea → toBook (with bookBy) → reserved (deposit/balanceDue) → confirmed (confirmation#) → done`.
    Organize into sections/tabs. Good defaults: **Book Next** (a priority `cards` block of anything `toBook`/`reserved`), **Daily** (a `dayGrid`), then category tabs (**Stays**, **Food**, **Activities**) using `bookingTable` blocks that filter the booking pool. Use a `baseSwitcher` when the trip has multiple lodging bases.
 
@@ -43,6 +50,8 @@ Trigger on: "plan my trip," "make an itinerary," "organize my bookings," "what's
 
 ## Reference
 
+Bundled with this skill (load only when you need them):
+
 - `references/booking-providers.md` — the Gmail search patterns by platform, generalized for travel.
-- `schema/trip.schema.json` — the data shape to produce.
-- `examples/sample-trip.json` — a complete, fictional example to mirror.
+- `references/trip.schema.json` — the data shape to produce (mirror of the `wayfare` package's `schema/trip.schema.json`).
+- `references/sample-trip.json` — a complete, fictional example to mirror.
