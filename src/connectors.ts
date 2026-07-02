@@ -4,7 +4,7 @@
  * produce EmailMessage / CalendarEvent records can feed the autofill pipeline.
  *
  * Three intended implementations:
- *   1. Claude MCP-backed (the Agent Skill passes connector results in) — see /skill.
+ *   1. Claude MCP-backed (the Agent Skill passes connector results in) — see skill/wayfare.
  *   2. Local files: .ics export, or .eml / JSON message dumps (works offline, used in tests).
  *   3. Direct OAuth (Gmail API, Google/Microsoft Calendar) — documented extension, not bundled,
  *      so the core package ships with zero runtime dependencies and no secrets handling.
