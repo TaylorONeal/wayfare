@@ -14,6 +14,15 @@ connected Gmail and Calendar do the data entry, so you barely type a thing.
 > Agent Skill are working and tested. See [`docs/PLAN.md`](docs/PLAN.md) for the
 > roadmap.
 
+## Why this exists
+
+A week out, the trip lives across eleven confirmation emails, two calendar invites, and a
+note on your phone. The apps that fix this want an account, a subscription, and access to
+your inbox. Then you are on a plane with no signal and the itinerary will not load.
+
+Wayfare reads bookings you already have and hands you one HTML file. It opens offline, on
+any phone, and it keeps working after the company that made it stops existing.
+
 ## Quick start
 
 ```bash
@@ -106,3 +115,16 @@ your real trips out of version control.
 
 Issues and PRs welcome — especially new booking providers and themes. See
 [`CONTRIBUTING.md`](CONTRIBUTING.md). MIT licensed.
+
+---
+
+## More from me
+
+I'm Taylor O'Neal. I work in product and analytics, teach at Miami University, and put the
+tools I actually use into the open.
+
+- [tayloroneal.com](https://www.tayloroneal.com) for what I'm working on and how to reach me
+- [@businesstaylor](https://x.com/businesstaylor) on X, where I post build notes
+- [@grizzpm](https://www.youtube.com/@grizzpm) on YouTube
+
+If this saved you time, a star helps other people find it. Issues and PRs are welcome.
